@@ -10,6 +10,8 @@ export default function Main (props) {
     let unsubscribeAll = null;
 
     api.rpc.chain.subscribeNewHeads((header) => {
+      console.log(111, header.number.toHuman());
+      console.log(header);
       setBlockInfo([
         { name: 'number', value: header.number.toNumber() },
         { name: 'hash', value: header.hash.toHuman() },
